@@ -1,0 +1,21 @@
+
+通过ionic cli命令创建ionic项目： 
+ionic start myApp tabs --type=angular
+
+1） 查看支持的平台以及版本：ionic cordova platform ls 
+2） 构建android platform：ionic cordova platform add android
+
+移除android工程：ionic cordova platform remove android 
+添加指定版本的android工程：ionic cordova platform add android@6.0.0
+
+npm install ng-zorro-antd-mobile --save
+//全局引入
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
+imports: [
+    ...
+    NgZorroAntdMobileModule
+  ]
+@import "~ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css"
+
+//构建android应用
+ionic cordova build android
