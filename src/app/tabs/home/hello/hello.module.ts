@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TabsComponent } from './tabs.component';
-import { TabsRoutingModule } from './tabs.routing.module';
+import { HelloComponent } from './hello.component';
 import { IonicModule } from '@ionic/angular';
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
+import { HelloRoutingModule } from './hello.routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
     NgZorroAntdMobileModule,
-    TabsRoutingModule
+    HelloRoutingModule
   ],
-  declarations: [TabsComponent]
+  declarations: [HelloComponent]
 })
-export class TabsModule { }
+export class HelloModule { }
