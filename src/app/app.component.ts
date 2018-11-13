@@ -32,16 +32,16 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.splashScreen.hide(); // 显示和隐藏启动画面。
       this.statusBar.styleDefault(); // 管理本机状态栏的外观,styleDefault使用默认状态栏（深色文本，浅色背景）。
-      this.statusBar.styleLightContent();
+      this.splashScreen.hide(); // 显示和隐藏启动画面。
       this.registerBackButtonAction(); // 注册返回按键事件
-      // this.platform.resume.subscribe(); // 弹出框
+      this.platform.resume.subscribe(); // 弹出框
     });
   }
 
   registerBackButtonAction() {
     this.customBackActionSubscription = this.platform.backButton.subscribe(() => {
+      this.platform.pause.subscribe();
       if (this.url === '/tabs/home' || this.url === '/tabs/mytv' || this.url === '/tabs/about') {
         this.appMinimize.minimize();
         // if (this.backButtonPressed) {

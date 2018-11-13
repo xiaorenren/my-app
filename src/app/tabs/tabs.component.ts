@@ -9,6 +9,17 @@ import { Router, NavigationEnd } from '@angular/router';
 export class TabsComponent implements OnInit {
   tab = 'home';
   // array = ['home', 'about', 'mytv'];
+  hidden = false;
+  fullScreen = false;
+  topFlag = false;
+  tintColor = '#108ee9';
+  unselectedTintColor = '#888';
+  tabbarStyle: object = {
+    position: 'fixed',
+    height: '100%',
+    width: '100%',
+    top: 0
+  };
 
   constructor(public router: Router
   ) {
@@ -30,5 +41,10 @@ export class TabsComponent implements OnInit {
 
   onClick(value) {
     this.tab = value;
+  }
+
+  onPress(event) {
+    // console.log('event: ', event);
+    this.tab = event;
   }
 }

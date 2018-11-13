@@ -1,3 +1,65 @@
+<!-- <TabBar [barTintColor]="'white'" [tintColor]="tintColor" [unselectedTintColor]="unselectedTintColor" [ngStyle]="tabbarStyle"
+  [activeTab]="0" [hidden]="hidden" [tabBarPosition]="topFlag ? 'top' : 'bottom'">
+  <TabPane style="background-color: white; text-align: center; height: 100%" [title]='custom1'>
+    <ng-template #custom1>
+      <TabBarTab [title]="'首页'" [key]="1" [badge]="1" [icon]="icon1" (onPress)="onPress('home')" routerLink="/tabs/home"
+        [selectedIcon]="icon11">
+        <ng-template #icon1>
+          <div style="width:22px;height: 22px;background: url('https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #icon11>
+          <div style="width:22px;height: 22px;background: url('https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%; text-align: center">
+      <ng-container>
+        <router-outlet *ngIf="tab==='home'"></router-outlet>
+      </ng-container>
+    </div>
+  </TabPane>
+  <TabPane style="background-color: white; text-align: center; height: 100%" [title]='custom2'>
+    <ng-template #custom2>
+      <TabBarTab [title]="'关于'" [key]="2" [badge]="'new'" [icon]="icon2" (onPress)="onPress('about')" routerLink="/tabs/about" [selectedIcon]="icon22">
+        <ng-template #icon2>
+          <div style="width:22px;height: 22px;background: url('https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #icon22>
+          <div style="width:22px;height: 22px;background: url('https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%; text-align: center">
+      <ng-container>
+        <router-outlet *ngIf="tab==='about'"></router-outlet>
+      </ng-container>
+    </div>
+  </TabPane>
+  <TabPane style="background-color: white; text-align: center; height: 100%" [title]='custom4'>
+    <ng-template #custom4>
+      <TabBarTab [title]="'我的'" [key]="4" [icon]="icon4" (onPress)="onPress('mytv')" routerLink="/tabs/mytv" [selectedIcon]="icon44">
+        <ng-template #icon4>
+          <div style="width:22px;height: 22px;background: url('https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+        <ng-template #icon44>
+          <div style="width:22px;height: 22px;background: url('https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg') center center / 21px 21px no-repeat;">
+          </div>
+        </ng-template>
+      </TabBarTab>
+    </ng-template>
+    <div style="background-color: white; height: 100%; text-align: center">
+      <ng-container>
+        <router-outlet *ngIf="tab==='mytv'"></router-outlet>
+      </ng-container>
+    </div>
+  </TabPane>
+</TabBar> -->
+
 <ion-tabs>
   <ion-tab tab="home">
     <ion-router-outlet *ngIf="tab==='home'"></ion-router-outlet>
