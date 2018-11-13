@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router, NavigationEnd } from '@angular/router';
 import { AppMinimize } from '@ionic-native/app-minimize/ngx';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -23,7 +22,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     private appMinimize: AppMinimize, // 可以最小化Android设备上的应用程序
-    private app: App,
+    // private app: App,
     public navController: NavController, // 导航控制器
     public toastCtrl: ToastController,
   ) {
@@ -33,10 +32,11 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleBlackOpaque(); // 管理本机状态栏的外观,styleDefault使用默认状态栏（深色文本，浅色背景）。
       this.splashScreen.hide(); // 显示和隐藏启动画面。
+      this.statusBar.styleDefault(); // 管理本机状态栏的外观,styleDefault使用默认状态栏（深色文本，浅色背景）。
+      this.statusBar.styleLightContent();
       this.registerBackButtonAction(); // 注册返回按键事件
-      this.platform.resume.subscribe(); // 弹出框
+      // this.platform.resume.subscribe(); // 弹出框
     });
   }
 
@@ -59,9 +59,9 @@ export class AppComponent {
         //   setTimeout(() => this.backButtonPressed = false, 2000);
         // }
       } else {
-        this.navController.goBack();
+        // this.navController.goBack();
       }
-    }, 1);
+    }, 101);
   }
   initRouterListen() {
     this.router.events.subscribe(event => { // 需要放到最后一个执行

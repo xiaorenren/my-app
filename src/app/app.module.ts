@@ -23,7 +23,8 @@ import { AppMinimize } from '@ionic-native/app-minimize/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AppMinimize, App
+    AppMinimize,
+    App
   ],
   bootstrap: [AppComponent]
 })
