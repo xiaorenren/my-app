@@ -4,20 +4,22 @@ import { TabsComponent } from './tabs.component';
 import { TabsRoutingModule } from './tabs.routing.module';
 import { IonicModule } from '@ionic/angular';
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
-import { HomeModule } from './home/home.module';
-import { MytvModule } from './mytv/mytv.module';
-import { AboutModule } from './about/about.module';
+import { HomeComponent } from './home/home.component';
+import { MytvComponent } from './mytv/mytv.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
     NgZorroAntdMobileModule,
-    HomeModule,
-    MytvModule,
-    AboutModule,
     TabsRoutingModule
   ],
-  declarations: [TabsComponent]
+  declarations: [
+    TabsComponent,
+    HomeComponent,
+    MytvComponent,
+    AboutComponent
+  ]
 })
 export class TabsModule { }

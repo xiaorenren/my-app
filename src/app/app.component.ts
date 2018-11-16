@@ -40,26 +40,26 @@ export class AppComponent {
   }
 
   registerBackButtonAction() {
-    this.customBackActionSubscription = this.platform.backButton.subscribe(() => {
+    this.customBackActionSubscription = this.platform.backButton.subscribe(async () => {
       this.platform.pause.subscribe();
-      if (this.url === '/tabs/home' || this.url === '/tabs/mytv' || this.url === '/tabs/about') {
-        this.appMinimize.minimize();
-        // if (this.backButtonPressed) {
-        //   this.appMinimize.minimize();
-        //   this.backButtonPressed = false;
-        // } else {
-        //   //  第一次按，弹出Toast
-        //   (await this.toastCtrl.create({
-        //     message: '再按一次退出应用',
-        //     duration: 2000,
-        //     position: 'bottom'
-        //   })).present();
+      if (this.url === '/tabs') {
+        // this.appMinimize.minimize();
+        if (this.backButtonPressed) {
+          this.appMinimize.minimize();
+          this.backButtonPressed = false;
+        } else {
+          //  第一次按，弹出Toast
+          (await this.toastCtrl.create({
+            message: '再按一次退出应用',
+            duration: 2000,
+            position: 'bottom'
+          })).present();
 
-        //   this.backButtonPressed = true;
-        //   setTimeout(() => this.backButtonPressed = false, 2000);
-        // }
+          this.backButtonPressed = true;
+          setTimeout(() => this.backButtonPressed = false, 2000);
+        }
       } else {
-        // this.navController.goBack();
+        this.navController.goBack();
       }
     }, 101);
   }
