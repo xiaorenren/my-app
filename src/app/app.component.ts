@@ -42,17 +42,17 @@ export class AppComponent {
   registerBackButtonAction() {
     this.customBackActionSubscription = this.platform.backButton.subscribe(async () => {
       this.platform.pause.subscribe();
-      if (this.url === '/tabs') {
+      if (this.url === '/' || this.url === '/tabs') {
         // this.appMinimize.minimize();
         if (this.backButtonPressed) {
           this.appMinimize.minimize();
           this.backButtonPressed = false;
         } else {
-          //  第一次按，弹出Toast
+          // 第一次按，弹出Toast
           (await this.toastCtrl.create({
             message: '再按一次退出应用',
             duration: 2000,
-            position: 'bottom'
+            position: 'middle'
           })).present();
 
           this.backButtonPressed = true;
@@ -61,12 +61,13 @@ export class AppComponent {
       } else {
         this.navController.goBack();
       }
-    }, 101);
+    }, 1);
   }
   initRouterListen() {
     this.router.events.subscribe(event => { // 需要放到最后一个执行
       if (event instanceof NavigationEnd) {
         this.url = event.url;
+        console.log(this.url);
       }
     });
   }

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'tabs', pathMatch: 'full' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginModule' },
   { path: 'test', loadChildren: './test/test.module#TestModule' }
 ];
 

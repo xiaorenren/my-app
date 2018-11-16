@@ -1,0 +1,11 @@
+<form nz-form #formRef="ngForm" (ngSubmit)="!loading&&onSubmit(formRef.value)">
+  <InputItem [type]="'text'" #UserNameRef="ngModel" [(ngModel)]="userName" name="userName" clear="true" [placeholder]="'用户证号'"
+    required [moneyKeyboardAlign]="'left'">
+    用户证号：
+  </InputItem>
+  <InputItem [type]="'password'" #PasswordRef="ngModel" [(ngModel)]="password" name="password" clear="true"
+    [placeholder]="'密码'" required [moneyKeyboardAlign]="'left'">
+    密码：
+  </InputItem>
+  <div Button type="primary" (onClick)="onSubmit(formRef.value)" [disabled]="formRef.invalid||loading" [loading]="loading">登录</div>
+</form>

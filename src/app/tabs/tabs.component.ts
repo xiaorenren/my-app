@@ -7,7 +7,6 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements OnInit {
-  tab = 'home';
   // array = ['home', 'about', 'mytv'];
   hidden = false;
   fullScreen = false;
@@ -40,11 +39,10 @@ export class TabsComponent implements OnInit {
   }
 
   onClick(value) {
-    this.tab = value;
+
   }
 
   onPress(event) {
     // console.log('event: ', event);
-    this.tab = event;
   }
 }
