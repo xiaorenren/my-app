@@ -55,10 +55,19 @@ const I18NSERVICE_MODULES = [
 const I18NSERVICE_PROVIDES = [
   { provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false },
 ];
+
+
+// #region JSON Schema form (using @delon/form)
+import { JsonSchemaModule } from './shared/json-schema/json-schema.module';
+const FORM_MODULES = [JsonSchemaModule];
+// #endregion
+
+// #region Http Interceptors
 const INTERCEPTOR_PROVIDES = [
   // { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
 ];
+// #endregion
 
 export function StartupServiceFactory(
   startupService: StartupService,
@@ -85,6 +94,7 @@ const APPINIT_PROVIDES = [
     DelonModule.forRoot(),
     IonicModule.forRoot(),
     ...I18NSERVICE_MODULES,
+    ...FORM_MODULES,
     AppRoutingModule],
   providers: [
     StatusBar,

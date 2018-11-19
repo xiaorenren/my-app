@@ -1,4 +1,7 @@
-<form nz-form #formRef="ngForm" (ngSubmit)="!loading&&onSubmit(formRef.value)">
+<form nz-form #formRef="ngForm" (ngSubmit)="!loading&&onSubmit(formRef.value)" se-container="1">
+  <se>
+    <input type="text" />
+  </se>
   <InputItem [type]="'text'" #UserNameRef="ngModel" [(ngModel)]="userName" name="userName" clear="true" [placeholder]="'用户证号'"
     required [moneyKeyboardAlign]="'left'">
     用户证号：
