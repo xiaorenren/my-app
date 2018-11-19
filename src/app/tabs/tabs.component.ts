@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 
 @Component({
   selector: 'app-tabs',
@@ -20,8 +21,18 @@ export class TabsComponent implements OnInit {
     top: 0
   };
 
-  constructor(public router: Router
+  constructor(public router: Router,
+    @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService
   ) {
+    this.tokenService.set({
+      token: '123456789',
+      userId: '1',
+      name: 'admin',
+      realName: 'jing',
+      email: 'data.email',
+      avatar: 'data.avatar',
+      time: +new Date()
+    });
     // this.router.events.subscribe(event => {
     //   if (event instanceof NavigationEnd) {
     //     this.array.map(res => {

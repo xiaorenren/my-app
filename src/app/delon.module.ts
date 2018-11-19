@@ -8,10 +8,10 @@ import {
   SkipSelf,
   ModuleWithProviders,
 } from '@angular/core';
-import { throwIfAlreadyLoaded } from './core/module-import-guard';
+import { throwIfAlreadyLoaded } from '../app/core/module-import-guard';
 
 import { AlainThemeModule } from '@delon/theme';
-import { DelonABCModule } from '@delon/abc';
+import { DelonABCModule, STConfig } from '@delon/abc';
 import { DelonChartModule } from '@delon/chart';
 import { DelonAuthModule } from '@delon/auth';
 import { DelonACLModule } from '@delon/acl';
@@ -21,7 +21,7 @@ import { DelonUtilModule } from '@delon/util';
 // #region mock
 // import { DelonMockModule } from '@delon/mock';
 // import * as MOCKDATA from '../../_mock';
-// import { environment } from '../environments/environment';
+// import { environment } from '@env/environment';
 // const MOCK_MODULES = !environment.production
 //   ? [DelonMockModule.forRoot({ data: MOCKDATA })]
 //   : [];
@@ -64,9 +64,15 @@ export function fnDelonAuthConfig(): DelonAuthConfig {
   });
 }
 
+export function fnSTConfig(): STConfig {
+  return Object.assign(new STConfig(), <STConfig>{
+    modal: { size: 'lg' },
+  });
+}
+
 const GLOBAL_CONFIG_PROVIDES = [
   // TIPS：@delon/abc 有大量的全局配置信息，例如设置所有 `st` 的页码默认为 `20` 行
-  // { provide: STConfig, useFactory: fnSTConfig }
+  { provide: STConfig, useFactory: fnSTConfig },
   { provide: PageHeaderConfig, useFactory: fnPageHeaderConfig },
   { provide: DelonAuthConfig, useFactory: fnDelonAuthConfig },
 ];

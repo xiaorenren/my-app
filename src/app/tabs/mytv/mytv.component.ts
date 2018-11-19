@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 
 @Component({
   selector: 'app-mytv',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MytvComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService) {
+
+    console.log(this.tokenService.get().token);
+  }
 
   ngOnInit() {
   }
