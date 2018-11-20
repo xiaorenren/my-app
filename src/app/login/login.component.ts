@@ -4,6 +4,7 @@ import { AuthService } from '../core/services/auth.service';
 import { ReuseTabService } from '@delon/abc';
 import { Router } from '@angular/router';
 import { StartupService } from '../core/startup/startup.service';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-login',
@@ -18,12 +19,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private message: NzMessageService,
     private authService: AuthService,
     private startupSvc: StartupService,
+
     @Inject(ReuseTabService) private reuseTabService: ReuseTabService,
     @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService
   ) {
-    this.tokenService.clear();
+    this.tokenService.clear(); // 登录之前清空原登录信息
   }
 
   ngOnInit() {
@@ -57,7 +60,8 @@ export class LoginComponent implements OnInit {
           // }
           // this.settingsService.user.email = this.tokenService.get().email;
 
-          this.router.navigate(['/']);
+          this.message.success(data.message);
+          // this.router.navigate(['/']);
         });
         // 否则直接跳转
         // this.router.navigate(['/']);

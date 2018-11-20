@@ -34,10 +34,10 @@
             ],
             "styles": [
               {
-                "input": "src/theme/variables.scss"
+                "input": "src/theme/variables.css"
               },
               {
-                "input": "src/global.scss"
+                "input": "src/styles.less"
               }
             ],
             "scripts": []
@@ -167,6 +167,9 @@
     "defaultCollection": "@ionic/angular-toolkit"
   },
   "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "less"
+    },
     "@ionic/angular-toolkit:component": {
       "styleext": "scss"
     },

@@ -7,6 +7,8 @@ import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 import { HomeComponent } from './home/home.component';
 import { MytvComponent } from './mytv/mytv.component';
 import { AboutComponent } from './about/about.component';
+import { LiveComponent } from './live/live.component';
+import { VodComponent } from './vod/vod.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { AboutComponent } from './about/about.component';
     TabsComponent,
     HomeComponent,
     MytvComponent,
-    AboutComponent
+    AboutComponent,
+    LiveComponent,
+    VodComponent
   ]
 })
 export class TabsModule { }

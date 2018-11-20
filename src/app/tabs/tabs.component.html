@@ -1,10 +1,11 @@
-<TabBar [barTintColor]="'white'" [tintColor]="tintColor" [unselectedTintColor]="unselectedTintColor" [ngStyle]="tabbarStyle"
+<!-- <TabBar [barTintColor]="'white'" [tintColor]="tintColor" [unselectedTintColor]="unselectedTintColor" [ngStyle]="tabbarStyle"
   [activeTab]="0" [hidden]="hidden" [tabBarPosition]="topFlag ? 'top' : 'bottom'">
   <TabPane class="tab-pane" [title]='custom1'>
     <ng-template #custom1>
       <TabBarTab [title]="'首页'" [key]="1" [badge]="1" [icon]="icon1" (onPress)="onPress('home')" [selectedIcon]="icon11">
         <ng-template #icon1>
           <div class="home-icon">
+            &nbsp;
           </div>
         </ng-template>
         <ng-template #icon11>
@@ -57,30 +58,37 @@
       </ng-container>
     </div>
   </TabPane>
-</TabBar>
+</TabBar> -->
 
-<!-- <ion-tabs>
-    <ion-tab tab="home">
-      <app-home></app-home>
+<ion-tabs>
+  <ion-tab tab="home">
+    <app-home></app-home>
+  </ion-tab>
+  <ion-tab tab="live">
+    <app-live></app-live>
+  </ion-tab>
+  <ion-tab tab="vod">
+      <app-vod></app-vod>
     </ion-tab>
-    <ion-tab tab="about">
-      <app-about></app-about>
-    </ion-tab>
-    <ion-tab tab="mytv">
-      <app-mytv></app-mytv>
-    </ion-tab>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>首页</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="mytv">
-        <ion-icon name="contacts"></ion-icon>
-        <ion-label>我的</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="about">
-        <ion-icon name="information-circle"></ion-icon>
-        <ion-label>关于</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs> -->
+  <ion-tab tab="mytv">
+    <app-mytv></app-mytv>
+  </ion-tab>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>首页</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="live">
+      <ion-icon name="videocam"></ion-icon>
+      <ion-label>直播</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="vod">
+      <ion-icon name="logo-youtube"></ion-icon>
+      <ion-label>点播</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="mytv">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>我的</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

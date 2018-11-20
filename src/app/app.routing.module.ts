@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'tabs', pathMatch: 'full' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsModule' },
   { path: 'login', loadChildren: './login/login.module#LoginModule' },
+  { path: 'play', loadChildren: './play/play.module#PlayModule' },
   { path: 'test', loadChildren: './test/test.module#TestModule' }
 ];
 
