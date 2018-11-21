@@ -9,10 +9,12 @@ import { MytvComponent } from './mytv/mytv.component';
 import { AboutComponent } from './about/about.component';
 import { LiveComponent } from './live/live.component';
 import { VodComponent } from './vod/vod.component';
+import { SharedModule } from '../shared/shared.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     IonicModule,
     NgZorroAntdMobileModule,
     TabsRoutingModule
@@ -23,7 +25,8 @@ import { VodComponent } from './vod/vod.component';
     MytvComponent,
     AboutComponent,
     LiveComponent,
-    VodComponent
+    VodComponent,
+    HeaderComponent
   ]
 })
 export class TabsModule { }

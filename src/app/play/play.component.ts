@@ -16,7 +16,7 @@ export class PlayComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.id = params['id'];
+      this.id = params.id;
       // TODO
       this.message.success('播放成功！');
     });

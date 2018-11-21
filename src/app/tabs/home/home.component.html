@@ -1,13 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>首页</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header [title]="'首页'"></app-header>
 <div class="ion-content">
   <a [routerLink]="'/tabs/hello'">你好</a><br />
   <a routerLink="/test">测试</a><br />
-  <a routerLink="/login">登录</a><br/>
-  <a routerLink="/play">播放</a>
+  <a routerLink="/login">登录</a><br />
+  <a [routerLink]="['/play',3]">播放</a>
   <router-outlet></router-outlet>
 </div>

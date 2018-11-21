@@ -34,10 +34,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(formValue) {
-    console.log(formValue);
     this.loading = true;
     this.authService.loginWithCredentials(this.userName, this.password).subscribe(data => {
-      this.loading = false;
       if (data.success) {// 身份验证成功
         // 清空路由复用信息
         this.reuseTabService.clear();
@@ -53,18 +51,10 @@ export class LoginComponent implements OnInit {
         });
         // 重新获取 StartupService 内容，若其包括 User 有关的信息的话
         this.startupSvc.load().then(() => {
-          // //初始化用户名、头像、邮箱等
-          // this.settingsService.user.name = this.tokenService.get().name;
-          // if (this.tokenService.get().avatar) {
-          //   this.settingsService.user.avatar = this.tokenService.get().avatar;
-          // }
-          // this.settingsService.user.email = this.tokenService.get().email;
-
+          this.loading = false;
           this.message.success(data.message);
           // this.router.navigate(['/']);
         });
-        // 否则直接跳转
-        // this.router.navigate(['/']);
       } else {
         console.log(data.message);
         this.error = `账户或密码错误`;
